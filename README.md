@@ -1,10 +1,15 @@
 This is a simplified version of C++ STL implementation. 
 
+namespace: ministl
+
 Four major components:
 Container
 Iterator
 Algorithm
 Function
+
+Additional Components:
+Allocator
 
 Container:
 
@@ -37,3 +42,5 @@ Iterator:
 Algorithm:
 
 Function:
+
+Allocator:
