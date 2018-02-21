@@ -6,3 +6,8 @@ What you learned:
 What's allocator
 What's a trivial destructor
 What's dynamic cast/static cast
+
+What's next:
+More tests
+Comparison between homebrew allocator and standard allocator (who's faster)
+Implement vector
