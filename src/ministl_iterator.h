@@ -43,7 +43,7 @@ namespace ministl{
 	};
 
 	/*
-	Iterator traits exractor
+	Iterator traits (properties) exractor
 	*/
 	template<class Iterator>
 	struct iterator_traits{
@@ -82,6 +82,11 @@ namespace ministl{
 	Calculate the distance between two pointers
 	*/
 
+	/*
+		Partial specialization for input iterator
+		can also use forward and bidirectional iterator due to 
+		tag inheritance
+	*/
 	template<typename InputIterator>
 	typename iterator_traits<InputIterator>::difference_type
 	_internal_distance(	InputIterator first, 
@@ -96,6 +101,11 @@ namespace ministl{
 		return n;
 	}
 
+
+
+	/*
+		Partial specialization for random access iterator
+	*/
 	template<typename InputIterator>
 	typename iterator_traits<InputIterator>::difference_type
 	_internal_distance(	InputIterator first, 
@@ -104,6 +114,9 @@ namespace ministl{
 		return last-first;
 	}
 
+	/*
+		Upper layer function call
+	*/
 	template<typename InputIterator>
 	typename iterator_traits<InputIterator>::difference_type
 	distance(InputIterator first, InputIterator last){
@@ -114,6 +127,10 @@ namespace ministl{
 	/*
 	Advance the iterator by n
 	*/
+
+	/*
+		Partial specialization for input iterator
+	*/
 	template<typename InputIterator, typename Distance>
 	void
 	__advance(	InputIterator& itr, Distance d,
@@ -121,10 +138,13 @@ namespace ministl{
 		while(--d<=0)++itr;
 	}
 
+	/*
+		Partial specialization for bidirectional access iterator
+	*/
 	template<typename InputIterator, typename Distance>
 	void
 	_internal_advance(	InputIterator& itr, Distance d,
-				bidirectional_iterator_tag){
+						bidirectional_iterator_tag){
 		if(d>0){
 			while(--d>=0)++itr;
 		}else if(d<0){
@@ -132,13 +152,19 @@ namespace ministl{
 		}else return;
 	}
 
+	/*
+		Partial specialization for random access iterator
+	*/
 	template<typename InputIterator, typename Distance>
 	void
 	_internal_advance(	InputIterator& itr, Distance d,
-				random_access_iterator_tag){
+						random_access_iterator_tag){
 		itr += d;
 	}
 
+	/*
+		Upper layer function call
+	*/
 	template<typename InputIterator, typename Distance>
 	void
 	advance(InputIterator& itr, Distance d){

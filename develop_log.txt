@@ -1,3 +1,21 @@
+2018/2/21
+What you did:
+Implemented 80% of iterator base class
+----------------------------------------------------------------------
+What you learned:
+	partial template specialization:
+		Partial template specialization is a particular form of class template specialization. Usually used in reference to the C++ programming language, it allows the programmer to specialize only some arguments of a class template, as opposed to explicit specialization, where all the template arguments are provided.
+
+	iterator traits:
+		Traits class defining properties of iterators.
+
+		Standard algorithms determine certain properties of the iterators passed to them and the range they represent by using the members of the corresponding iterator_traits instantiation.
+----------------------------------------------------------------------	
+What's next:
+Finish iterator base class implementation
+Write vector/list class
+
+======================================================================
 2018/2/13
 What you did:
 implemented the basic version of allocator (based on "new")

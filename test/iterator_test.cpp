@@ -10,6 +10,7 @@ Description: testing the ministl_iterator.h (the allocator)
 #include <iostream>
 #include "../src/ministl_iterator.h"
 
+//note: the tags do not comply with the std::tags
 int main(){
 	std::vector<int> my_vec(4,0);
 	std::cout<<ministl::distance(my_vec.begin(), my_vec.end());
