@@ -4,15 +4,25 @@ Implemented 80% of iterator base class
 ----------------------------------------------------------------------
 What you learned:
 	partial template specialization:
-		Partial template specialization is a particular form of class template specialization. Usually used in reference to the C++ programming language, it allows the programmer to specialize only some arguments of a class template, as opposed to explicit specialization, where all the template arguments are provided.
+		Partial template specialization is a particular form of class
+		template specialization. Usually used in reference to the C++
+		programming language, it allows the programmer to specialize
+		only some arguments of a class template, as opposed to explicit
+		specialization, where all the template arguments are provided.
 
 	iterator traits:
 		Traits class defining properties of iterators.
 
-		Standard algorithms determine certain properties of the iterators passed to them and the range they represent by using the members of the corresponding iterator_traits instantiation.
+		Standard algorithms determine certain properties of the iterators
+		passed to them and the range they represent by using the members 
+		of the corresponding iterator_traits instantiation.
+
+	A good plan for implementing STL:
+		Check this link:
+			http://www.alinshans.com/2017/09/18/p1709181/
 ----------------------------------------------------------------------	
 What's next:
-Finish iterator base class implementation
+Finish iterator base class implementation (Annotated STL sources p102)
 Write vector/list class
 
 ======================================================================
